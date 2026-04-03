@@ -72,7 +72,8 @@ export default function Main() {
               onClick={() => navigate(`/movies/${movie.id}`)}
             >
               <div className="flex-1 bg-linear-to-t from-[#000d] to-[#0000] flex flex-col justify-end">
-                <h2 className="text-4xl text-center mb-10 px-2">{movie.title}</h2>
+                <h2 className="text-4xl text-center px-2">{movie.title}</h2>
+                <p className="text-foreground-muted text-center mb-10">&#9734; {movie.averageReview} / 5</p>
               </div>
             </div>
           );

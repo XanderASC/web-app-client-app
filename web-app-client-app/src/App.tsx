@@ -7,7 +7,7 @@ function App({ children }: { children?: React.ReactNode }) {
   const [search, setSearch] = useState('');
 
   return (
-    <div className="min-h-screen bg-background-muted text-foreground font-ibm flex flex-col">
+    <div className="min-h-screen bg-background text-foreground font-ibm flex flex-col">
       <Navbar search={search} setSearch={setSearch} />
       <div className="flex flex-col flex-1">
         {children}

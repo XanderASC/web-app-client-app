@@ -1,7 +1,8 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState, type ReactNode } from "react";
-import type { Movie } from "../types";
+import type { Movies } from "../types";
 import { useNavigate, useOutletContext } from "react-router";
+import Loading from "../components/Loading";
 
 
 export default function Main() {
@@ -13,7 +14,7 @@ export default function Main() {
 
   const { data, isPending, error } = useQuery({
       queryKey: ['Main'],
-      queryFn: (): Promise<Movie[]> => fetch(`${import.meta.env.VITE_API_URL}/movies?page=${page}&search=${search}`).then(r => r.json())
+      queryFn: (): Promise<Movies[]> => fetch(`${import.meta.env.VITE_API_URL}/movies?page=${page}&search=${search}`).then(r => r.json())
   });
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function Main() {
   }, [search]);
 
   if (isPending) {
-    return <p className="text-4xl my-auto text-center text-foreground-muted animate-pulse">Loading...</p>
+    return <Loading />
   }
 
   if (error || page * 5 - 5 >= (data[0].count || 1)) {
@@ -79,6 +80,6 @@ export default function Main() {
         {emptyDivs}
       </div>
     </div>
-    <p className="text-center text-2xl py-2 bg-background-muted">Page {page} of {Math.ceil(data[0].count / 5 || 1)}</p>
+    <p className="text-center text-lg py-2 bg-background-muted">Page {page} of {Math.ceil(data[0].count / 5 || 1)}</p>
   </>
 }

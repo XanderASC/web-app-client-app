@@ -1,5 +1,4 @@
 export interface Movie {
-  count: number;
   averageReview: number;
   genre: string;
   id: number;
@@ -10,4 +9,15 @@ export interface Movie {
   runtime: number;
   synopsis: string;
   title: string;
+}
+
+export interface Movies extends Movie {
+  count: number;
+}
+
+export interface Review {
+  id: number,
+  rating: number,
+  reviewText: string,
+  createdBy: string
 }

@@ -71,9 +71,9 @@ export default function Main() {
               style={{backgroundImage: `url(${movie.posterUrl})`}}
               onClick={() => navigate(`/movies/${movie.id}`)}
             >
-              <div className="flex-1 bg-linear-to-t from-[#000d] to-[#0000] flex flex-col justify-end">
-                <h2 className="text-4xl text-center px-2">{movie.title}</h2>
-                <p className="text-foreground-muted text-center mb-10">&#9734; {movie.averageReview} / 5</p>
+              <div className="flex-1 bg-linear-to-t from-gradient-start to-[#0000] flex flex-col justify-end">
+                <h2 className="text-4xl text-gray-3 text-center px-2">{movie.title}</h2>
+                <p className="text-gray-2 text-center mb-10">&#9734; {movie.averageReview} / 5</p>
               </div>
             </div>
           );

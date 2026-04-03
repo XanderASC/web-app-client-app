@@ -92,6 +92,13 @@
   --background: #fafaf9;
   --background-muted: #cac6c6;
 
+  --gradient-start: #000b;
+  --gradient-end: #0000;
+  --gray-0: #313d43;
+  --gray-1: #445054;
+  --gray-2: #cac6c6;
+  --gray-3: #fafaf9;
+
   /* Fonts */
   --font-ibm: "IBM Plex Serif";
 }
@@ -113,5 +120,11 @@
   --color-foreground-muted: var(--foreground-muted);
   --color-background: var(--background);
   --color-background-muted: var(--background-muted);
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-end: var(--gradient-end);
+  --color-gray-0: var(--gray-0);
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
   --font-ibm: var(--font-ibm);
 }

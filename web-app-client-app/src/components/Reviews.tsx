@@ -19,7 +19,7 @@ export default function Reviews({ id }: { id: number }) {
 
   return (
     <div className="flex-1 overflow-y-scroll space-y-4">
-      {data.map((review) => {
+      {data.length === 0 ? 'No reviews found.' : data.map((review) => {
         return (
           <div className="bg-background-muted p-4 space-y-4">
             <div className="flex gap-4 text-foreground-muted">

@@ -44,20 +44,20 @@ export default function Main() {
       <h1 className="sr-only">FlickCritic Home Page</h1>
       <button
         className="fixed top-[calc(50vh-42.5px)] py-2 px-6 bg-background-muted rounded-full left-5 text-6xl text-primary border border-primary border-3 cursor-pointer hover:bg-background active:top-[calc(50vh-40px)]"
-        onClick={() => setPage(page - 1)}
+        onClick={() => page <= 1 ? undefined : setPage(page - 1)}
         style={page <= 1 ? {
           opacity: "50%",
-          pointerEvents: "none"
+          cursor: "not-allowed"
         }: {}}
       >
         <span className="ml-[-8px]">&#10094;</span>
       </button>
       <button
         className="fixed top-[calc(50vh-42.5px)] py-2 px-6 bg-background-muted rounded-full right-5 text-6xl text-primary border border-primary border-3 cursor-pointer hover:bg-background active:top-[calc(50vh-40px)]"
-        onClick={() => setPage(page + 1)}
+        onClick={() => page * 5 >= data[0].count ? undefined : setPage(page + 1)}
         style={page * 5 >= data[0].count ? {
           opacity: "50%",
-          pointerEvents: "none"
+          cursor: "not-allowed"
         }: {}}
       >
         <span className="mr-[-8px]">&#10095;</span>
